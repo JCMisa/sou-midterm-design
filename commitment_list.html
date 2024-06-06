@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSystemFinalProject</title>
+
+    <link rel="stylesheet" href="./lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="./css/site.css" />
+    
+    <link rel="stylesheet" href="~/WebSystemFinalProject.styles.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+    <link rel="stylesheet" href="//cdn.datatables.net/2.0.1/css/dataTables.dataTables.min.css" />
+    
+    <!-- swiper css -->
+    <link rel="stylesheet" href="./css/swiper-bundle.min.css">
+</head>
+<body>
+    <!-- @model List<Web.Models.CommitmentForm>; -->
+    
+        <header>
+            <!--=============== HEADER ===============-->
+            <div class="n-header">
+                <nav class="n-nav n-container">
+                    <div class="n-nav__data">
+                        <a href="./index.html" class="n-nav__logo">
+                            <i class="ri-planet-line"></i> Logo Name
+                        </a>
+        
+                        <div class="n-nav__toggle" id="n-nav-toggle">
+                            <i class="ri-menu-line n-nav__burger"></i>
+                            <i class="ri-close-line n-nav__close"></i>
+                        </div>
+                    </div>
+        
+                    <!--=============== NAV MENU ===============-->
+                    <div class="n-nav__menu" id="n-nav-menu">
+                        <ul class="n-nav__list">
+                            <li><a href="./index.html" class="n-nav__link">Home</a></li>
+        
+                            <!--=============== DROPDOWN 1 ===============-->
+                            <li class="n-dropdown__item">
+                                <div class="n-nav__link">
+                                    Forms <i class="ri-arrow-down-s-line n-dropdown__arrow"></i>
+                                </div>
+        
+                                <ul class="n-dropdown__menu">
+                                    <li>
+                                        <a href="#" class="n-dropdown__link">
+                                            <i class="ri-file-add-fill"></i> Application
+                                        </a>
+                                    </li>
+                                    <!--=============== DROPDOWN SUBMENU APPLICATION ===============-->
+                                    <!-- @* <li class="n-dropdown__subitem">
+                                            <div class="n-dropdown__link">
+                                                <i class="ri-file-add-fill"></i> Application <i class="ri-add-line n-dropdown__add"></i>
+                                            </div>
+        
+                                            <ul class="n-dropdown__submenu">
+                                                <li>
+                                                    <a asp-area="User" asp-controller="CommitmentForm" asp-action="Index" class="n-dropdown__sublink">
+                                                        <i class="ri-file-list-line"></i> View All
+                                                    </a>
+                                                </li>
+        
+                                                <li>
+                                                    <a asp-area="User" asp-controller="CommitmentForm" asp-action="Create" class="n-dropdown__sublink">
+                                                        <i class="ri-cash-line"></i> Create
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li> *@ -->
+        
+        
+        
+                                    <li>
+                                        <a asp-area="User" asp-controller="CommForm" asp-action="Index"
+                                            class="n-dropdown__link">
+                                            <i class="ri-arrow-go-forward-line"></i> Renewal
+                                        </a>
+                                    </li>
+                                    <!--=============== DROPDOWN SUBMENU RENEWAL ===============-->
+                                    <!-- @* <li class="n-dropdown__subitem">
+                                            <div class="n-dropdown__link">
+                                                <i class="ri-arrow-go-forward-line"></i> Renewal <i class="ri-add-line n-dropdown__add"></i>
+                                            </div>
+        
+                                            <ul class="n-dropdown__submenu">
+                                                <li>
+                                                    <a asp-area="User" asp-controller="CommitmentForm" asp-action="Index" class="n-dropdown__sublink">
+                                                        <i class="ri-file-list-line"></i> View All
+                                                    </a>
+                                                </li>
+        
+                                                <li>
+                                                    <a asp-area="User" asp-controller="CommitmentForm" asp-action="Create" class="n-dropdown__sublink">
+                                                        <i class="ri-cash-line"></i> Create
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li> *@ -->
+        
+        
+        
+        
+                                    <li>
+                                        <a asp-area="User" asp-controller="CommitmentForm" asp-action="Upsert"
+                                            class="n-dropdown__link">
+                                            <i class="ri-git-repository-commits-fill"></i> Commitment
+                                        </a>
+                                    </li>
+                                    <!--=============== DROPDOWN SUBMENU COMMITMENT ===============-->
+                                    <!-- @* <li class="n-dropdown__subitem">
+                                            <div class="n-dropdown__link">
+                                                <i class="ri-git-repository-commits-fill"></i> Commitment <i class="ri-add-line n-dropdown__add"></i>
+                                            </div>
+        
+                                            <ul class="n-dropdown__submenu">
+                                                <li>
+                                                    <a asp-area="User" asp-controller="CommitmentForm" asp-action="Index" class="n-dropdown__sublink">
+                                                        <i class="ri-file-list-line"></i> View All
+                                                    </a>
+                                                </li>
+        
+                                                <li>
+                                                    <a asp-area="User" asp-controller="CommitmentForm" asp-action="Create" class="n-dropdown__sublink">
+                                                        <i class="ri-cash-line"></i> Create
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li> *@ -->
+        
+        
+        
+        
+                                    <li>
+                                        <a asp-area="User" asp-controller="CommForm" asp-action="Index"
+                                            class="n-dropdown__link">
+                                            <i class="ri-list-view"></i> Plan of Activities
+                                        </a>
+                                    </li>
+                                    <!--=============== DROPDOWN SUBMENU PLAN OF ACT ===============-->
+                                    <!-- @* <li class="n-dropdown__subitem">
+                                            <div class="n-dropdown__link">
+                                                <i class="ri-list-view"></i> Plan of Activities <i class="ri-add-line n-dropdown__add"></i>
+                                            </div>
+        
+                                            <ul class="n-dropdown__submenu">
+                                                <li>
+                                                    <a asp-area="User" asp-controller="CommitmentForm" asp-action="Index" class="n-dropdown__sublink">
+                                                        <i class="ri-file-list-line"></i> View All
+                                                    </a>
+                                                </li>
+        
+                                                <li>
+                                                    <a asp-area="User" asp-controller="CommitmentForm" asp-action="Create" class="n-dropdown__sublink">
+                                                        <i class="ri-cash-line"></i> Create
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li> *@ -->
+        
+                                </ul>
+                            </li>
+        
+                            <!--=============== DROPDOWN 2 ===============-->
+        
+                            <li class="n-dropdown__item">
+                                <div class="n-nav__link">
+                                    List <i class="ri-arrow-down-s-line n-dropdown__arrow"></i>
+                                </div>
+        
+                                <ul class="n-dropdown__menu">
+                                    <li>
+                                        <a href="#" class="n-dropdown__link">
+                                            <i class="ri-file-add-fill"></i> Application
+                                        </a>
+                                    </li>
+        
+                                    <li>
+                                        <a href="#" class="n-dropdown__link">
+                                            <i class="ri-arrow-go-forward-line"></i> Renewal
+                                        </a>
+                                    </li>
+        
+                                    <li>
+                                        <a href="./commitment_list.html" class="n-dropdown__link">
+                                            <i class="ri-git-repository-commits-fill"></i> Commitment
+                                        </a>
+                                    </li>
+        
+                                    <li>
+                                        <a href="#" class="n-dropdown__link">
+                                            <i class="ri-list-view"></i> Plan of Activities
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+        
+                            <!--=============== DROPDOWN 3 ===============-->
+        
+                            <li class="n-dropdown__item">
+                                <div class="n-nav__link">
+                                    Manage <i class="ri-arrow-down-s-line n-dropdown__arrow"></i>
+                                </div>
+        
+                                <ul class="n-dropdown__menu">
+                                    <li>
+                                        <a asp-area="Admin" asp-controller="Accounts" asp-action="Index"
+                                            class="n-dropdown__link">
+                                            <i class="ri-add-line"></i> Create Account
+                                        </a>
+                                    </li>
+        
+                                    <li>
+                                        <a asp-area="Admin" asp-controller="College" asp-action="Index"
+                                            class="n-dropdown__link">
+                                            <i class="ri-school-fill"></i> College
+                                        </a>
+                                    </li>
+        
+                                    <li>
+                                        <a asp-area="Admin" asp-controller="AcademicRank" asp-action="Index"
+                                            class="n-dropdown__link">
+                                            <i class="ri-sort-number-desc"></i> Academic Rank
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+        
+                            <!-- @* <li><a asp-area="User" asp-controller="Home" asp-action="Privacy" class="n-nav__link">Logout</a></li> *@
+                                <partial name="_LoginPartial" /> -->
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <div class="home-container">
+            <main role="main" class="pb-3 pt-5">
+                <section class="container m-top-small">
+                    <!-- render here the contents -->
+                    <partial name="_Notification" />
+
+                    <div class="table">
+                        <div class="table_header">
+                            <p>
+                                Commitment List
+                            </p>
+                            <div>
+                                <input class="table_search" type="text" placeholder="forms">
+                                <a asp-area="User" asp-controller="CommitmentForm" asp-action="Upsert" class="add_new table_btn">+ Add
+                                    New</a>
+                            </div>
+                        </div>
+                    
+                        <div class="table_section">
+                            <table id="tblData">
+                                <thead>
+                                    <tr>
+                                        <th>Organization</th>
+                                        <th>SchoolYear</th>
+                                        <th>AdvicerName</th>
+                                        <th>HomeAddress</th>
+                                        <th>Contact</th>
+                                        <th>College</th>
+                                        <th>AcademicRank</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>sample1</td>
+                                        <td>sample1</td>
+                                        <td>sample1</td>
+                                        <td>sample1</td>
+                                        <td>sample1</td>
+                                        <td>sample1</td>
+                                        <td>sample1</td>
+                                        <td>
+                                            <button class="table_btn">
+                                                <a asp-area="User" asp-controller="CommitmentForm" asp-action="Upsert"
+                                                    asp-route-id="@obj.CommitmentId">
+                                                    <i class="bi bi-pencil-square"></i>
+                                                </a>
+                                            </button>
+                
+                                            <button class="table_btn">
+                                                <a asp-area="User" asp-controller="CommitmentForm" asp-action="Delete"
+                                                    asp-route-id="@obj.CommitmentId">
+                                                    <i class="bi bi-trash-fill"></i>
+                                                </a>
+                                            </button>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>sample2</td>
+                                        <td>sample2</td>
+                                        <td>sample2</td>
+                                        <td>sample2</td>
+                                        <td>sample2</td>
+                                        <td>sample2</td>
+                                        <td>sample2</td>
+                                        <td>
+                                            <button class="table_btn">
+                                                <a asp-area="User" asp-controller="CommitmentForm" asp-action="Upsert" asp-route-id="@obj.CommitmentId">
+                                                    <i class="bi bi-pencil-square"></i>
+                                                </a>
+                                            </button>
+                                    
+                                            <button class="table_btn">
+                                                <a asp-area="User" asp-controller="CommitmentForm" asp-action="Delete" asp-route-id="@obj.CommitmentId">
+                                                    <i class="bi bi-trash-fill"></i>
+                                                </a>
+                                            </button>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>sample3</td>
+                                        <td>sample3</td>
+                                        <td>sample3</td>
+                                        <td>sample3</td>
+                                        <td>sample3</td>
+                                        <td>sample3</td>
+                                        <td>sample3</td>
+                                        <td>
+                                            <button class="table_btn">
+                                                <a asp-area="User" asp-controller="CommitmentForm" asp-action="Upsert" asp-route-id="@obj.CommitmentId">
+                                                    <i class="bi bi-pencil-square"></i>
+                                                </a>
+                                            </button>
+                                    
+                                            <button class="table_btn">
+                                                <a asp-area="User" asp-controller="CommitmentForm" asp-action="Delete" asp-route-id="@obj.CommitmentId">
+                                                    <i class="bi bi-trash-fill"></i>
+                                                </a>
+                                            </button>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>sample4</td>
+                                        <td>sample4</td>
+                                        <td>sample4</td>
+                                        <td>sample4</td>
+                                        <td>sample4</td>
+                                        <td>sample4</td>
+                                        <td>sample4</td>
+                                        <td>
+                                            <button class="table_btn">
+                                                <a asp-area="User" asp-controller="CommitmentForm" asp-action="Upsert" asp-route-id="@obj.CommitmentId">
+                                                    <i class="bi bi-pencil-square"></i>
+                                                </a>
+                                            </button>
+                                    
+                                            <button class="table_btn">
+                                                <a asp-area="User" asp-controller="CommitmentForm" asp-action="Delete" asp-route-id="@obj.CommitmentId">
+                                                    <i class="bi bi-trash-fill"></i>
+                                                </a>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>sample5</td>
+                                        <td>sample5</td>
+                                        <td>sample5</td>
+                                        <td>sample5</td>
+                                        <td>sample5</td>
+                                        <td>sample5</td>
+                                        <td>sample5</td>
+                                        <td>
+                                            <button class="table_btn">
+                                                <a asp-area="User" asp-controller="CommitmentForm" asp-action="Upsert" asp-route-id="@obj.CommitmentId">
+                                                    <i class="bi bi-pencil-square"></i>
+                                                </a>
+                                            </button>
+                                    
+                                            <button class="table_btn">
+                                                <a asp-area="User" asp-controller="CommitmentForm" asp-action="Delete" asp-route-id="@obj.CommitmentId">
+                                                    <i class="bi bi-trash-fill"></i>
+                                                </a>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    
+        
+
+        <script src="./js/Commitment.js"></script>
+        <script src="./js/site.js" asp-append-version="true"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="//cdn.datatables.net/2.0.1/js/dataTables.min.js" asp-append-version="true"></script>
+        <!--=============== MAIN JS ===============-->
+        <script src="./js/site.js"></script>
+        <script src="./js/swiper-bundle.min.js"></script>
+        <script src="./js/slider.js"></script>
+</body>
+</html>
